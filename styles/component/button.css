@@ -1,0 +1,25 @@
+.btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background-color: #43A047;
+    color: white;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn:disabled {
+    opacity: .5;
+}
+
+.btn:hover:not(:disabled) {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+.btn.btn--secondary {
+    background-color: #EEEEEE;
+    color: #616161;
+}

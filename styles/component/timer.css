@@ -1,0 +1,86 @@
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.timer .timer-countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+}
+
+.timer .timer-countdown-wrapper {
+    box-sizing: content-box;
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.timer .timer-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: #BDBDBD;
+    color: #ffffff;
+}
+
+.timer .timer-value {
+    font-weight: bold;
+}
+
+.timer .timer-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.timer .timer-controls > * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Running modifier */
+.timer.timer--running .timer-countdown-wrapper {
+    border-color: #66BB6A;
+    animation-name: tick_animation;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.timer.timer--running .timer-countdown {
+    background-color: #66BB6A;
+}
+
+/* Warning modifier */
+.timer.timer--warning .timer-countdown {
+    background-color: #FFCA28;
+}
+
+.timer.timer--warning .timer-countdown-wrapper {
+    border-color: #FFCA28;
+    animation-name: tick_animation;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Finished modifier */
+.timer.timer--finished .timer-countdown {
+    background-color: #EF5350;
+}
+
+/* Animation */
+@keyframes tick_animation {
+    0% { padding: 0.1rem; }
+    50% { padding: 1rem; }
+    100% { padding: 0.1rem; }
+}
